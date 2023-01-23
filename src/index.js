@@ -4,10 +4,13 @@ import { loadDataLs, saveDataLs } from './modules/localStorage.js';
 import Task from './modules/Tasks.js';
 import { ChangeTaskStatus, clearList } from './modules/Interactive.js';
 
+const section = document.querySelector('.list');
+const addContainer = document.querySelector('.addContainer');
+const buttonClear = document.querySelector('.buttonClear');
+
 let tasks = loadDataLs();
 Task.LoadList(tasks);
 
-const addContainer = document.querySelector('.addContainer');
 
 /* Add new tasks */
 const Addtask = (e) => {
@@ -22,8 +25,6 @@ const Addtask = (e) => {
 };
 
 addContainer.addEventListener('submit', Addtask);
-
-const section = document.querySelector('.list');
 
 /* Remove task */
 section.addEventListener('click', (event) => {
@@ -68,7 +69,7 @@ section.addEventListener('click', (event) => {
 });
 
 /* Clear all completed tasks */
-const buttonClear = document.querySelector('.buttonClear');
+
 buttonClear.addEventListener('click', () => {
   tasks = clearList(tasks);
   Task.renewIndex(tasks);
