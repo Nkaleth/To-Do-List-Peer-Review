@@ -44,7 +44,7 @@ section.addEventListener('focusout', (event) => {
   const editTask = target.value;
   const idEdit = target.id;
   const change = Task.editTask(editTask, tasks, idEdit);
-  if (change !== 0) {
+  if (!change) {
     Task.LoadList(tasks);
     saveDataLs(tasks);
   }

@@ -1,10 +1,8 @@
 export const loadDataLs = () => {
   const data = localStorage.getItem('library');
-  if (data) {
-    const library = JSON.parse(data);
-    return library;
-  }
-  return [];
+  const library = data ? JSON.parse(data) : [];
+
+  return library;
 };
 
 export const saveDataLs = (library) => {
