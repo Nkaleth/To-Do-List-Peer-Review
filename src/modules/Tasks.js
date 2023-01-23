@@ -20,7 +20,7 @@ class Task {
     const tasks = document.querySelectorAll('input[data-type="task"]');
     tasksList.forEach((element) => {
       checkboxes[element.index - 1].checked = element.completed;
-      if (element.completed === true) {
+      if (element.completed) {
         tasks[element.index - 1].style.cssText += 'text-decoration: line-through';
       }
     });

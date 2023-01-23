@@ -55,7 +55,7 @@ section.addEventListener('click', (event) => {
   if (target.type === 'checkbox') {
     const id = target.id.replace(/\D/g, '');
     const textTask = section.querySelector(`[name=i${id}]`);
-    if (target.checked === true) {
+    if (target.checked) {
       textTask.style.cssText += 'text-decoration: line-through';
       ChangeTaskStatus(tasks, id);
       saveDataLs(tasks);
