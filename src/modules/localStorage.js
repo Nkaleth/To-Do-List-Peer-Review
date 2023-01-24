@@ -1,7 +1,6 @@
 export const loadDataLs = () => {
   const data = localStorage.getItem('library');
   const library = data ? JSON.parse(data) : [];
-
   return library;
 };
 

@@ -11,7 +11,6 @@ const buttonClear = document.querySelector('.buttonClear');
 let tasks = loadDataLs();
 Task.LoadList(tasks);
 
-
 /* Add new tasks */
 const Addtask = (e) => {
   e.preventDefault();
@@ -44,10 +43,11 @@ section.addEventListener('focusout', (event) => {
   const editTask = target.value;
   const idEdit = target.id;
   const change = Task.editTask(editTask, tasks, idEdit);
-  if (!change) {
+  if (change !== 0) {
     Task.LoadList(tasks);
     saveDataLs(tasks);
   }
+  Task.LoadList(tasks);
 });
 
 /* Complete tasks */
